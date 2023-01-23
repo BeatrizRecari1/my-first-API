@@ -9,6 +9,7 @@ app.post("/instructors", (req, res) => {
     // take an array of new instructors and merge with existing
     const newInstructors = req.body.instructors
     instructors = [...instructors, ...newInstructors]
+    // save to database
     res.send(instructors)
 })
 
@@ -20,6 +21,7 @@ app.get("/test", (request, response) => {
 })
 
 app.get("/instructors", (request, response) => {
+    // get from database
     response.send(instructors)
 })
 
@@ -31,6 +33,7 @@ app.get("/secure", (request, response) => {
 app.post("/students", (req, res) => {
     // we need to handle the post request (body)
     const newStudent = req.body
+    // save to database
     console.log(newStudent)
     res.send(newStudent)
 })
